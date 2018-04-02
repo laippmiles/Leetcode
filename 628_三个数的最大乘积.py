@@ -33,3 +33,17 @@ class Solution1(object):
         """
         nums.sort()
         return max(nums[-1]*nums[-2]*nums[-3],nums[-1]*nums[0]*nums[1])#排完序后最大值就这两种表达方式，直接把比较大那个丢出来就完事了
+
+class Solutionbest:
+    def maximumProduct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        import heapq #heapq是一个独立模块，可以拿来提取最大/最小元素，可对列表进行操作
+        #参考https://blog.csdn.net/onlyanyz/article/details/45790235
+        a, b = heapq.nlargest(3, nums), heapq.nsmallest(2, nums)
+        return max(a[0]*a[1]*a[2], a[0]*b[0]*b[1])
+
+a = Solutionbest().maximumProduct([1,2,3,4])
+print(a)
