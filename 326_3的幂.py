@@ -1,3 +1,4 @@
+#判断一个数是不是3的幂
 class Solution(object):
     def isPowerOfThree(self, n):
         """
