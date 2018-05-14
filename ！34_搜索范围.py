@@ -12,7 +12,7 @@
 输入: nums = [5,7,7,8,8,10], target = 6
 输出: [-1,-1]
 '''
-class Solution(object)#40ms:
+class Solution(object):#40ms:
     def searchRange(self, nums, target):
         """
         :type nums: List[int]

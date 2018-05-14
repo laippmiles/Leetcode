@@ -31,6 +31,7 @@ class SolutionBest:
         while val in nums:
             nums.remove(val)
             #remove() 函数用于移除列表中某个值的第一个匹配项。
+        return len(nums)
 
 a= Solution()
 print(a.removeElement([3,2,2,3],3))
