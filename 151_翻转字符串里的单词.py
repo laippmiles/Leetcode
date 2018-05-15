@@ -20,5 +20,5 @@ class Solution(object):
         """
         return ' '.join(s.split()[::-1])
         #s.split()和s.split(‘ ’)是有区别的
-        #'     '.split() → []
+        #'     '.split() → [] 使用默认空白符（换行，空白，制表）
         #'    '.split(' ') → ['', '', '', '', '']
