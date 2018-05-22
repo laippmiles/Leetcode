@@ -17,7 +17,7 @@ class SolutionSort:#有序列表法
         return nums[len(nums)-1]#上面的循环是不管最后一个元素的，上面要是输不出，那说明就是最后一个元素了
 
 #这里就需要提一下异或这个操作符。一个数值和另一个数值进行两次异或计算，该数值不变。
-# 也就是说： A XOR B XOR B = A XOR （B XOR B） = A
+#也就是说： A XOR B XOR B = A XOR （B XOR B） = A
 #其实异或的话，可以用白话来说就是‘要么这个，要么那个’
 #所以也就是说，如果将array中的所有数值都进行一次异或计算
 # 那么最终的结果也就是那个singleNumber。
