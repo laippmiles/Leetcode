@@ -14,7 +14,8 @@
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
-
+#翻转单链表的三种方法：
+#https://blog.csdn.net/hyqsong/article/details/49429859
 class Solution(object):
     def reverseList(self, head):
         """
