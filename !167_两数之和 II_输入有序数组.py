@@ -32,3 +32,22 @@ class Solution(object):
                 start += 1
             else:
                 end -= 1
+
+
+class Solution2(object):
+    def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        dicn = {}
+        ans = []
+        #字典法，代码简洁，有点复杂，建议画图辅助理解
+        for i in range(len(numbers)):
+            if numbers[i] in dicn :
+                ans.append(dicn[numbers[i]] + 1)
+                ans.append(i + 1)
+                return ans
+            dicn[target - numbers[i]] = i
+        return ans
