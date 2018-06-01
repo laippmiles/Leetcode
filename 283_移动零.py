@@ -38,7 +38,7 @@ class SolutionBest(object):
                 zeros += 1 #登记0的个数
             else:
                 nums[idx - zeros] = num
-                #非零元素右移，画图或者结合示例好懂
+                #非零元素左移，画图或者结合示例好懂
         for idx in range(zeros):
             nums[size - 1 - idx] = 0
             #写好末尾的0
