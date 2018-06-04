@@ -1,0 +1,41 @@
+/*
+某网站包含两个表，Customers 表和 Orders 表。
+编写一个 SQL 查询，找出所有从不订购任何东西的客户。
+
+Customers 表：
++----+-------+
+| Id | Name  |
++----+-------+
+| 1  | Joe   |
+| 2  | Henry |
+| 3  | Sam   |
+| 4  | Max   |
++----+-------+
+
+Orders 表：
++----+------------+
+| Id | CustomerId |
++----+------------+
+| 1  | 3          |
+| 2  | 1          |
++----+------------+
+
+例如给定上述表格，你的查询应返回：
++-----------+
+| Customers |
++-----------+
+| Henry     |
+| Max       |
++-----------+
+*/
+# Write your MySQL query statement below
+
+select Name as Customers
+--用as改输出后的变量名
+from Customers Left join Orders on Customers.Id = Orders.CustomerId
+--用Left join 连接两个表
+
+--如果左表的某行在右表中没有匹配行
+--则在相关联的结果集行中右表的所有选择列表列均为空值。
+where CustomerId is null
+--加入筛选条件
