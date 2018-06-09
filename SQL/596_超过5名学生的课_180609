@@ -1,0 +1,42 @@
+/*
+有一个courses 表 ，
+有: student (学生) 和 class (课程)。
+请列出所有超过或等于5名学生的课。
+
+例如,表:
++---------+------------+
+| student | class      |
++---------+------------+
+| A       | Math       |
+| B       | English    |
+| C       | Math       |
+| D       | Biology    |
+| E       | Math       |
+| F       | Computer   |
+| G       | Math       |
+| H       | Math       |
+| I       | Math       |
++---------+------------+
+
+应该输出:
++---------+
+| class   |
++---------+
+| Math    |
++---------+
+Note:
+学生在每个课中不应被重复计算。
+*/
+
+# Write your MySQL query statement below
+
+select tep.class from
+
+(select distinct student,class from courses) as tep
+--distinct用于去重，
+--写distinct student,class
+--这样的mysql会认为要过滤掉student和class两个字段都重复的记录
+
+--这还有个问题，去重这句话实际上生成了另一个表
+--所以要给这个临时表取个名字，否则会报错
+group by class having count(class) >= 5

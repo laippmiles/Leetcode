@@ -1,0 +1,30 @@
+/*
+编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+
+例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。
+如果不存在第二高的薪水，那么查询应返回 null。
++---------------------+
+| SecondHighestSalary |
++---------------------+
+| 200                 |
++---------------------+
+*/
+
+# Write your MySQL query statement below
+
+select ifnull
+--ifnull 指令 ：
+--如果 expr1 不是 NULL，IFNULL() 返回 expr1，否则它返回 expr2。
+((select Salary from Employee group by Salary desc limit 1,1),null)
+--从0开始算，从索引 1 起取1行数据
+--limit用法举例：
+--LIMIT 5,10;  // 检索记录行 6-15
+--LIMIT a,b;  // 从0开始算，从索引 a 起取 b 行数据
+as SecondHighestSalary
