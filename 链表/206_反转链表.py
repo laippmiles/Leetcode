@@ -30,7 +30,11 @@ class Solution(object):
             #注意记好四连的写法
             #万年标准题
             tep = p.next
+            #当前节点后的链表
             p.next = ans
+            #当前节点接新链表
             ans = p
+            #写好新链表头部
             p = tep
+            #写好剩下的旧链表
         return ans
