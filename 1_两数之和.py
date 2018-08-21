@@ -32,3 +32,27 @@ class SolutionBest:#52ms，比美国佬写得好理解
                 return ([keys[target-nums[i]],i])
             if nums[i] not in keys:
                 keys[nums[i]]=i
+
+class Solution3(object):
+    #双指针法
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        numsSort = sorted(nums)
+        left = 0
+        right = len(nums)-1
+        while left < right:
+            if numsSort[left] + numsSort[right] > target:
+                right -= 1
+            if numsSort[left] + numsSort[right] < target:
+                left += 1
+            if numsSort[left] + numsSort[right] == target:
+                if numsSort[left] == numsSort[right]:
+                    return [nums.index(numsSort[left]),nums.index(numsSort[left],nums.index(numsSort[left])+1)]
+                    #index第二个参数起可以限定搜索范围，注意考虑有两个一样的元素的情况
+                else:
+                    return [nums.index(numsSort[left]),nums.index(numsSort[right])]
+        return []
